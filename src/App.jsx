@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import './categories-styles.scss'
+import Directory from './components/directory/directory-component';
+// import './categories-styles.scss'
 
 
 function App() {
@@ -34,24 +34,7 @@ function App() {
   
 
   return (
-    <div className='categories-container'>
-
-      {categories.map(({title, id, imageUrl}) => (
-          <div key={id} className='category-container'>
-            <div 
-              className='background-image'>
-              style={{
-                backgroundImage: `url(${imageUrl})`,
-              }}
-            </div>
-            <div className='category-body-container'>
-              <h2>{title}</h2>
-              <p>Shop now</p>
-            </div> {/* /category-body-container */}
-          </div> 
-        ))
-      }      
-    </div> 
-  )
-}
+    <Directory categories={categories}/>
+  );
+};
 export default App
